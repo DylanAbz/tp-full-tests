@@ -29,7 +29,7 @@ export function ClockComponent () {
                 <button className="validateBtn" onClick={handleValidate} style={{marginTop: '1rem'}}>
                     Valider
                 </button>
-                <p>Heure : {hourLabel}, Valeur : {hourValue}</p>
+                <p className={"result-text"}>Heure : {hourLabel}, Valeur : {hourValue}</p>
             </div>
         </div>
     )
