@@ -1,7 +1,7 @@
 export enum ClockFaceType {
-    Moon,
-    Sun,
-    Earth
+    moon = 'Moon',
+    sun = 'Sun',
+    earth = 'Earth'
 }
 
 export class ClockFace {
@@ -9,6 +9,9 @@ export class ClockFace {
     type: ClockFaceType
 
     constructor(value: number, type: ClockFaceType) {
+        if (value < 1 || value > 2) {
+            throw new Error("ClockFace value needs to be 1 or 2")
+        }
         this.value = value;
         this.type = type;
     }
@@ -27,5 +30,15 @@ export class JupiterClock {
             }
         }
         this.faces = faces;
+    }
+
+    public getSunFace() {
+        return this.faces.filter(value => value.type === ClockFaceType.sun)[0]
+    }
+    public getMoonFace() {
+        return this.faces.filter(value => value.type === ClockFaceType.moon)[0]
+    }
+    public getEarthFace() {
+        return this.faces.filter(value => value.type === ClockFaceType.earth)[0]
     }
 }
