@@ -3,9 +3,7 @@ import {ClockFace, ClockFaceType, JupiterClock} from "../src/class/Clock";
 import {calculateHours} from "../src/calculator/HourCalculator";
 
 
-describe("Test de la création de JupiterClock", () => {
-
-})
+// Tous les tests sur les valeurs d'entrée sont réalisés dans les objets ClockFace et JupiterClock
 
 describe('Test de la fonction calculateHours', () => {
     describe('Effet cadran Lune sur le total', () => {
@@ -16,7 +14,6 @@ describe('Test de la fonction calculateHours', () => {
                 new ClockFace(1, ClockFaceType.earth)
             ])
             let number = calculateHours(clock);
-            console.log(number)
             expect(number).toBe(Math.floor((2+1) / 2))
         })
     })
@@ -27,7 +24,6 @@ describe('Test de la fonction calculateHours', () => {
                 new ClockFace(1, ClockFaceType.sun),
                 new ClockFace(1, ClockFaceType.earth)
             ])
-            console.log(calculateHours(clock))
             expect(calculateHours(clock)).toBe((1+1) - 2)
         })
         test('Doubler cadran Terre (Lune 1 Soleil 2 Terre 1)', () => {
@@ -36,7 +32,6 @@ describe('Test de la fonction calculateHours', () => {
                 new ClockFace(2, ClockFaceType.sun),
                 new ClockFace(1, ClockFaceType.earth)
             ])
-            console.log(calculateHours(clock))
             expect(calculateHours(clock)).toBe(1 + 2 + (1 * 2) - 2 + 2)
         })
     })
