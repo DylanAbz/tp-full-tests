@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "react": "^19.0.0",

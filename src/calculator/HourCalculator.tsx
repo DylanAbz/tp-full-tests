@@ -23,5 +23,14 @@ export function calculateHours(clock: JupiterClock) {
 }
 
 export function getHourFromResult(result: number) {
-    return "mortin"
+    if (result <= 2) {
+        return "mortin";
+    }
+    if (result <= 4) {
+        return "aprenoon";
+    }
+    if (result <= 5) {
+        return "soirning";
+    }
+    return "nuight"
 }
